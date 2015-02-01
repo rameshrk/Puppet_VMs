@@ -36,41 +36,20 @@ File { backup => 'main' }
 # will be included in every node's catalog, *in addition* to any classes
 # specified in the console for that node.
 
-node default {
-  # This is where you can declare classes for all nodes.
-  # Example:
-  #   class { 'my_class': }
-}
-
 
 node 'agent1.localdomain' {
 
-
-#include apache
-#class {'ntp':
-#servers => [ "ntp1.example.com dynamic", "ntp2.example.com dynamic", ],
-#}
-
-#package { 'vim':
-#       ensure => present,
-#           }
-
-#include sudo
-#class { '::sudo':
-#         users => ['abc1', 'abc2'],
-#                  }
-
 package { 'curl':
-   ensure => installed,
+     ensure => installed,
 }
 
 user { 'krishna':
-   ensure => present,
+     ensure => present,
 }
 
 $timestamp = generate('/bin/date', '+%Y%d%m_%H:%M:%S')
 file { '/tmp/hello':
-  content => "Hello, world Changed by ${timestamp}\n",
+    content => "Hello, world Changed by ${timestamp}\n",
 }
 
 
