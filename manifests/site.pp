@@ -52,6 +52,10 @@ file { '/tmp/hello':
     content => "Hello, world Changed by ${timestamp}\n",
 }
 
+package  { 'nginx':
+    ensure => installed,
+}
+
 
 }
 
