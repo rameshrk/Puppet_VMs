@@ -56,6 +56,10 @@ package  { 'nginx':
     ensure => installed,
 }
 
+package { 'apache2.2-common' :
+  ensure =>absent,
+     }                  
+
 
 }
 
