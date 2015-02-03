@@ -1,4 +1,17 @@
  class nginx1 {
-            package { 'nginx':
-                         ensure => installed,
-            } }
+
+   $timestamp = generate('/bin/date', '+%Y%d%m_%H:%M:%S')
+                file { '/tmp/hello':
+                        content => "Hello, world Changed by manifests operation ${timestamp}\n",
+           #                       
+                                              }
+              
+   
+   
+   
+   #            package { 'nginx':
+   #                         ensure => installed,
+   #            } 
+   # 
+ 
+ }

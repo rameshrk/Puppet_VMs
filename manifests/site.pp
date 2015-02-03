@@ -36,11 +36,11 @@ File { backup => 'main' }
 # will be included in every node's catalog, *in addition* to any classes
 # specified in the console for that node.
 
-  import 'nodes.pp' 
+#import 'nodes.pp' 
 
-  #node 'agent1.localdomain' {
-
-
+  node 'agent1.localdomain' {
+ 
+  include  nginx1
   #package { 'curl':
   #     ensure => installed,
   #}
@@ -63,5 +63,5 @@ File { backup => 'main' }
   #     }                  
   #
 
-  #}
+ }
 
