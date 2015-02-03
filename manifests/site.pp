@@ -36,30 +36,32 @@ File { backup => 'main' }
 # will be included in every node's catalog, *in addition* to any classes
 # specified in the console for that node.
 
+  import 'nodes.pp' 
 
-node 'agent1.localdomain' {
-
-package { 'curl':
-     ensure => installed,
-}
-
-user { 'krishna':
-     ensure => present,
-}
-
-$timestamp = generate('/bin/date', '+%Y%d%m_%H:%M:%S')
-file { '/tmp/hello':
-    content => "Hello, world Changed by ${timestamp}\n",
-}
-
-package  { 'nginx':
-    ensure => installed,
-}
-
-package { 'apache2.2-common' :
-  ensure =>absent,
-     }                  
+  #node 'agent1.localdomain' {
 
 
-}
+  #package { 'curl':
+  #     ensure => installed,
+  #}
+  #
+  #user { 'krishna':
+  #     ensure => present,
+  #}
+  #
+  #$timestamp = generate('/bin/date', '+%Y%d%m_%H:%M:%S')
+  #file { '/tmp/hello':
+  #    content => "Hello, world Changed by ${timestamp}\n",
+  #}
+  #
+  #package  { 'nginx':
+  #    ensure => installed,
+  #}
+  #
+  #package { 'apache2.2-common' :
+  #  ensure =>absent,
+  #     }                  
+  #
+
+  #}
 
