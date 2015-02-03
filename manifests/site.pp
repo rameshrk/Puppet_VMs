@@ -39,29 +39,7 @@ File { backup => 'main' }
 #import 'nodes.pp' 
 
   node 'agent1.localdomain' {
- 
   include  nginx1
-  #package { 'curl':
-  #     ensure => installed,
-  #}
-  #
-  #user { 'krishna':
-  #     ensure => present,
-  #}
-  #
-  #$timestamp = generate('/bin/date', '+%Y%d%m_%H:%M:%S')
-  #file { '/tmp/hello':
-  #    content => "Hello, world Changed by ${timestamp}\n",
-  #}
-  #
-  #package  { 'nginx':
-  #    ensure => installed,
-  #}
-  #
-  #package { 'apache2.2-common' :
-  #  ensure =>absent,
-  #     }                  
-  #
-
+  include  nginx
  }
 
