@@ -21,9 +21,20 @@
 
                    }
 
+              file { '/usr/share/nginx/html/index.html':
+                    source => 'puppet:///modules/nginx/index.html',
+              }
+
               file { '/etc/nginx/conf.d/default.conf':
-                      source     => 'puppet:///modules/nginx/cat-pictures.conf',
-                      notify => Service['nginx'],
+                      source  => 'puppet:///modules/nginx/cat-pictures.conf',
+                      require => File['/usr/share/nginx/html/index.html'],
+                      notify  => Service['nginx'],
                  }
-               
+              
+            exec { 'class nginx will output stuff':
+                      path                            => '/bin',
+                      command               => 'echo class nginx',
+                      logoutput => true,
+                                                }
+
          } 

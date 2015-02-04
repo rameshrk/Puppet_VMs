@@ -13,5 +13,13 @@
       file { '/tmp/file3':
         content => "Hello,  /tmp/file3 ${timestamp}\n",
           }
+
+      exec { 'class  will output stuff':
+        path => '/bin',
+        command => 'echo class nginx1',
+        logoutput => true,
+      }
+
+
       }
 

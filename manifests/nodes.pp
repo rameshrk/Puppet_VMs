@@ -1,12 +1,16 @@
  node 'agent1.localdomain' {
 
    include ngnix1,
-   include ngnix
+   include ngnix,
+     include log
  }
 
  node default {
 
      include nginx1
+     
+
+
 
  }
 
