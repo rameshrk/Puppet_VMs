@@ -43,5 +43,8 @@ File { backup => 'main' }
   include  nginx
   include  log
   include user
+  include removeuser
+  include ssh
+  include sudoers
  }
 
