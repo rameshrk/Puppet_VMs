@@ -42,6 +42,6 @@ File { backup => 'main' }
   include  nginx1
   include  nginx
   include  log
-
+  include user
  }
 
