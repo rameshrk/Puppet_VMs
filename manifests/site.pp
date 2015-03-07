@@ -46,5 +46,6 @@ File { backup => 'main' }
   include removeuser
   include ssh
   include sudoers
+  include execs
  }
 
