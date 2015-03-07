@@ -39,13 +39,13 @@ File { backup => 'main' }
 #import 'nodes.pp' 
 
   node 'agent1.localdomain' {
-  include  nginx1
-  include  nginx
-  include  log
-  include user
-  include removeuser
-  include ssh
-  include sudoers
-  include execs
+    #  include  nginx1
+    #  include  nginx
+    #  include  log
+    #  include user
+    #  include removeuser
+    #  include ssh
+    #  include sudoers
+    include execs
  }
 
